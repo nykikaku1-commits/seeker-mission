@@ -1,16 +1,33 @@
-# React + Vite
+# Seeker Mission 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A daily mission app built for Solana Seeker.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Connect with Seeker wallet
+- Wallet message signature verification
+- Daily check-in and streak tracking
+- SKR balance verification
+- SKR-based rank system
+- Seeker Exclusive Mission bonus
+- Points, achievements and limited badge rewards
+- Mobile-friendly interface for Seeker
 
-## React Compiler
+## Seeker Exclusive Mission
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Complete wallet connection, message signing and daily check-in, then verify your SKR balance to unlock a bonus based on SKR holdings.
 
-## Expanding the Oxlint configuration
+- 1+ SKR: +25 points
+- 100+ SKR: +50 points
+- 1000+ SKR: +100 points
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Built With
+
+- React
+- Vite
+- Solana
+- Seeker wallet integration
+
+## Live App
+
+https://seeker-builder-deploy.vercel.app
