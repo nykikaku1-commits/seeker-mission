@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seeker Mission</string>
+    <string name="title_activity_main">Seeker Mission</string>
+    <string name="package_name">com.seekermission.app</string>
+    <string name="custom_url_scheme">com.seekermission.app</string>
+</resources>

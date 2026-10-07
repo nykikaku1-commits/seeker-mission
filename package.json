@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@solana-mobile/seeker-connect-wallet-standard": "^0.1.0",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@solana-mobile/seeker-connect-wallet-standard": "^0.0.0-canary-20261005212800",
     "@solana-mobile/wallet-standard-mobile": "^0.6.0",
     "@solana/wallet-adapter-phantom": "^0.9.30",
     "@solana/wallet-adapter-react": "^0.15.40",

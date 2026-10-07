@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import {
   ConnectionProvider,
   WalletProvider,
@@ -34,7 +34,7 @@ function WalletInfo() {
         .find((w) => w.name?.toLowerCase().includes('seeker'))
 
       if (!wallet) {
-        setError('Seeker Connectが見つかりません')
+        setError('Seeker Connect縺瑚ｦ九▽縺九ｊ縺ｾ縺帙ｓ')
         return
       }
 
@@ -42,7 +42,7 @@ function WalletInfo() {
       const { accounts } = await wallet.features[StandardConnect].connect()
       console.log("CONNECT RESULT:", accounts)
       if (!accounts?.[0]) {
-        setError('ウォレット接続に失敗しました')
+        setError('繧ｦ繧ｩ繝ｬ繝・ヨ謗･邯壹↓螟ｱ謨励＠縺ｾ縺励◆')
         return
       }
       setSeekerAddress(accounts[0].address)
@@ -50,7 +50,7 @@ function WalletInfo() {
       setError('')
     } catch (err) {
       console.error('SEEKER_CONNECT_ERROR', err, err?.message, err?.stack)
-      setError(err?.message || 'Seeker Connectへの接続に失敗しました')
+      setError(err?.message || 'Seeker Connect縺ｸ縺ｮ謗･邯壹↓螟ｱ謨励＠縺ｾ縺励◆')
     }
   }
 
@@ -87,7 +87,7 @@ const effectiveSkrBalance = skrBalance
           0
   const skrSilverUnlocked = effectiveSkrBalance >= 100
 const effectiveStreak = streak
-  const achievements = [{ id: 'first-checkin', title: '🚀 First Check-in', unlocked: checkedIn }, { id: 'three-day-streak', title: '🔥 3 Day Streak', unlocked: effectiveStreak >= 3 }, { id: 'seven-day-streak', title: '🔥 7 Day Streak', unlocked: effectiveStreak >= 7 }, { id: 'skr-silver', title: '🥁ESKR Silver', unlocked: skrSilverUnlocked }]
+  const achievements = [{ id: 'first-checkin', title: '噫 First Check-in', unlocked: checkedIn }, { id: 'three-day-streak', title: '櫨 3 Day Streak', unlocked: effectiveStreak >= 3 }, { id: 'seven-day-streak', title: '櫨 7 Day Streak', unlocked: effectiveStreak >= 7 }, { id: 'skr-silver', title: '･・SKR Silver', unlocked: skrSilverUnlocked }]
 
   const skrRank =
     effectiveSkrBalance >= 1000 ? 'Gold' :
@@ -97,11 +97,11 @@ const effectiveStreak = streak
   const signTestMessage = async () => {
     try {
       if (!seekerAccount) {
-        setSignatureStatus('先にConnect with Seekerしてください')
+        setSignatureStatus('蜈医↓Connect with Seeker縺励※縺上□縺輔＞')
         return
       }
 
-      setSignatureStatus('署名を準備中...')
+      setSignatureStatus('鄂ｲ蜷阪ｒ貅門ｙ荳ｭ...')
 
       const wallet = getWallets()
         .get()
@@ -110,7 +110,7 @@ const effectiveStreak = streak
       const feature = wallet?.features['solana:signMessage']
 
       if (!feature) {
-      throw new Error('Seeker Connectが署名に対応していません')
+        throw new Error('Seeker Connect縺檎ｽｲ蜷阪↓蟇ｾ蠢懊＠縺ｦ縺・∪縺帙ｓ')
       }
 
       const message = new TextEncoder().encode('SEEKER BUILDER sign test')
@@ -128,7 +128,7 @@ const effectiveStreak = streak
   }
   const checkSkrBalance = async () => {
     if (!seekerAccount) {
-      setSkrError('ウォレットを接続してください')
+      setSkrError('繧ｦ繧ｩ繝ｬ繝・ヨ繧呈磁邯壹＠縺ｦ縺上□縺輔＞')
       return
     }
 
@@ -137,7 +137,7 @@ const effectiveStreak = streak
 
     try {
       const response = await fetch(
-        'https://api.mainnet-beta.solana.com',
+        '/api/solana-rpc',
         {
           method: 'POST',
           headers: {
@@ -176,7 +176,7 @@ const effectiveStreak = streak
       setSkrChecked(true)
     } catch (err) {
       console.error('SEEKER_CONNECT_ERROR', err, err?.message, err?.stack)
-      setSkrError(err?.message || 'SKR残高を確認できませんでした')
+      setSkrError(err?.message || 'SKR谿矩ｫ倥ｒ遒ｺ隱阪〒縺阪∪縺帙ｓ縺ｧ縺励◆')
     }
   }
   useEffect(() => {
@@ -255,11 +255,11 @@ const effectiveStreak = streak
       {seekerAddress && <p>Wallet: {seekerAddress.slice(0, 4)}...{seekerAddress.slice(-4)}</p>}
       {seekerAddress && (
         <div className="profile-card">
-          <h3>🏆 SEEKER PROFILE</h3>
+          <h3>醇 SEEKER PROFILE</h3>
           <p>Wallet: {seekerAddress.slice(0, 4)}...{seekerAddress.slice(-4)}</p>
-          <p>⭁EPoints: {points}</p>
-          <p>🔥 Streak: {streak} days</p>
-          <p>🎖 Badge: {rewardUnlocked ? 'LIMITED HOLDER' : 'Locked'}</p>
+          <p>箝・Points: {points}</p>
+          <p>櫨 Streak: {streak} days</p>
+          <p>事 Badge: {rewardUnlocked ? 'LIMITED HOLDER' : 'Locked'}</p>
         </div>
       )}
       <button onClick={signTestMessage}>Verify Wallet</button>
@@ -298,24 +298,24 @@ const effectiveStreak = streak
                         : ''
                   )
                 }}>
-                  デイリーチェックイン
+                  繝・う繝ｪ繝ｼ繝√ぉ繝・け繧､繝ｳ
                 </button>
               )}
             </li>
           </ul>
           <div className="seeker-bonus">
-            <h3>📱 Seeker Exclusive Mission</h3>
-          <p>ウォレット接続・署名・デイリーチェックイン完了。SKR保有量に応じてボーナス</p>
-            <p>1 SKR以上 +25pt</p>
-            <p>100 SKR以上 +50pt</p>
-            <p>1000 SKR以上 +100pt</p>
+            <h3>導 Seeker Exclusive Mission</h3>
+            <p>繧ｦ繧ｩ繝ｬ繝・ヨ謗･邯壹・鄂ｲ蜷阪・繝・う繝ｪ繝ｼ繝√ぉ繝・け繧､繝ｳ螳御ｺ・〒縲ヾKR菫晄怏驥上↓蠢懊§縺ｦ繝懊・繝翫せ</p>
+            <p>1 SKR莉･荳・ +25pt</p>
+            <p>100 SKR莉･荳・ +50pt</p>
+            <p>1000 SKR莉･荳・ +100pt</p>
             <button onClick={checkSkrBalance}>
-            SKR残高を確認          </button>
-            {skrError && <p>⚠⚠️ {skrError}</p>}
+              SKR谿矩ｫ倥ｒ遒ｺ隱・            </button>
+            {skrError && <p>笞・・{skrError}</p>}
 
             {skrChecked && (
               <p>
-                SKR残髁E {effectiveSkrBalance} SKR
+                SKR谿矩ｫ・ {effectiveSkrBalance} SKR
                 <br />
                 <span className={`skr-rank ${skrRank.toLowerCase()}`}>
                   SKR Rank: {skrRank}
@@ -324,7 +324,7 @@ const effectiveStreak = streak
             )}
             {seekerAccount && signatureStatus && checkedIn && skrChecked && effectiveSkrBalance > 0 ? (
               seekerBonusClaimed ? (
-                <p>✁ESeeker Bonus 獲得済み +{skrReward}pt</p>
+                <p>笨・Seeker Bonus 迯ｲ蠕玲ｸ医∩ +{skrReward}pt</p>
               ) : (
                 <button
                   onClick={() => {
@@ -349,20 +349,20 @@ const effectiveStreak = streak
               )
             )}
           </div>
-          <p>現在ポイント:  {points}</p>
-          <p>🔥 連続チェックイン: {streak}日</p>
-          <p>🎁 3日連続で+20pt / 7日連続で+50pt</p>
-          <p>🎁 Reward Shop：100ptで限定バッジをアンロック</p>
+          <p>迴ｾ蝨ｨ繝昴う繝ｳ繝・ {points}</p>
+          <p>櫨 騾｣邯壹メ繧ｧ繝・け繧､繝ｳ: {streak}譌･</p>
+          <p>氏 3譌･騾｣邯壹〒+20pt / 7譌･騾｣邯壹〒+50pt</p>
+          <p>氏 Reward Shop・・00pt縺ｧ髯仙ｮ壹ヰ繝・ず繧偵い繝ｳ繝ｭ繝・け</p>
           <button onClick={() => {
             setPoints(points - 100)
             setRewardUnlocked(true)
             localStorage.setItem('seekerRewardUnlocked', 'true')
           }}
             disabled={points < 100 || rewardUnlocked}>
-            {rewardUnlocked ? '🏆 限定バッジ獲得済み' : points >= 100 ? '100ptでアンロック' : `あと${100 - points}pt`}
+            {rewardUnlocked ? '醇 髯仙ｮ壹ヰ繝・ず迯ｲ蠕玲ｸ医∩' : points >= 100 ? '100pt縺ｧ繧｢繝ｳ繝ｭ繝・け' : `縺ゅ→${100 - points}pt`}
           </button>
           {bonusMessage && <p>{bonusMessage}</p>}
-          <p>🏆 Achievements: {achievements.filter(a => a.unlocked).map(a => a.title).join(' / ')}</p>
+          <p>醇 Achievements: {achievements.filter(a => a.unlocked).map(a => a.title).join(' / ')}</p>
         </div>
       )}
       {connected && publicKey && (
@@ -393,7 +393,7 @@ function App() {
         <WalletModalProvider>
           <div>
             <h1>SEEKER MISSION</h1>
-            <p>Complete daily missions. Build your streak. Earn points. 🚀</p>
+            <p>Complete daily missions. Build your streak. Earn points. 噫</p>
             <WalletInfo />
           </div>
         </WalletModalProvider>

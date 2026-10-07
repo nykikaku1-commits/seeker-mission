@@ -110,7 +110,7 @@ const effectiveStreak = streak
       const feature = wallet?.features['solana:signMessage']
 
       if (!feature) {
-      throw new Error('Seeker Connectが署名に対応していません')
+        throw new Error('Seeker Connectが署名に対応してぁE��せん')
       }
 
       const message = new TextEncoder().encode('SEEKER BUILDER sign test')
@@ -137,7 +137,7 @@ const effectiveStreak = streak
 
     try {
       const response = await fetch(
-        'https://api.mainnet-beta.solana.com',
+        '/api/solana-rpc',
         {
           method: 'POST',
           headers: {
@@ -298,20 +298,20 @@ const effectiveStreak = streak
                         : ''
                   )
                 }}>
-                  デイリーチェックイン
+                  チE��リーチェチE��イン
                 </button>
               )}
             </li>
           </ul>
           <div className="seeker-bonus">
             <h3>📱 Seeker Exclusive Mission</h3>
-          <p>ウォレット接続・署名・デイリーチェックイン完了。SKR保有量に応じてボーナス</p>
-            <p>1 SKR以上 +25pt</p>
-            <p>100 SKR以上 +50pt</p>
-            <p>1000 SKR以上 +100pt</p>
+            <p>ウォレチE��接続�E署名�EチE��リーチェチE��イン完亁E��、SKR保有量に応じてボ�Eナス</p>
+            <p>1 SKR以丁E +25pt</p>
+            <p>100 SKR以丁E +50pt</p>
+            <p>1000 SKR以丁E +100pt</p>
             <button onClick={checkSkrBalance}>
-            SKR残高を確認          </button>
-            {skrError && <p>⚠⚠️ {skrError}</p>}
+              SKR残高を確誁E            </button>
+            {skrError && <p>⚠�E�E{skrError}</p>}
 
             {skrChecked && (
               <p>
@@ -349,8 +349,8 @@ const effectiveStreak = streak
               )
             )}
           </div>
-          <p>現在ポイント:  {points}</p>
-          <p>🔥 連続チェックイン: {streak}日</p>
+          <p>現在ポインチE {points}</p>
+          <p>🔥 連続チェチE��イン: {streak}日</p>
           <p>🎁 3日連続で+20pt / 7日連続で+50pt</p>
           <p>🎁 Reward Shop：100ptで限定バッジをアンロック</p>
           <button onClick={() => {

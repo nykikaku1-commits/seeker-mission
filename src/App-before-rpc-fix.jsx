@@ -137,7 +137,7 @@ const effectiveStreak = streak
 
     try {
       const response = await fetch(
-        'https://api.mainnet-beta.solana.com',
+        '/api/solana-rpc',
         {
           method: 'POST',
           headers: {

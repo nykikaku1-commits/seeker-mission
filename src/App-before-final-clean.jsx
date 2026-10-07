@@ -137,7 +137,7 @@ const effectiveStreak = streak
 
     try {
       const response = await fetch(
-        'https://api.mainnet-beta.solana.com',
+        '/api/solana-rpc',
         {
           method: 'POST',
           headers: {
@@ -310,7 +310,7 @@ const effectiveStreak = streak
             <p>100 SKR以上 +50pt</p>
             <p>1000 SKR以上 +100pt</p>
             <button onClick={checkSkrBalance}>
-            SKR残高を確認          </button>
+              SKR残高を確誁E            </button>
             {skrError && <p>⚠⚠️ {skrError}</p>}
 
             {skrChecked && (
